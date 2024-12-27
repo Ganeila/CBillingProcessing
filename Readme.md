@@ -6,7 +6,7 @@
 - Crear en un folder 4 folderes, uno por cada país.
   La idea es tener un demonio que esté revisando cuando haya un archivo en cada folder, y envíe el archivo por correo y lo mueva después a una sub carpeta de enviados.
 
-## ![img.png](img.png)
+## ![img.png](src/img.png)
 
 
 ## Como convertirlo en ejecutable en cualquier maquina?
