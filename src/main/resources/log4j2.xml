@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN"> <!-- Defines the logging level for Log4j2 configuration. "WARN" means that warning and error messages will be displayed if there are issues in the configuration. -->
+
+    <Appenders>
+        <!-- File appender to write logs to a file -->
+        <File name="FileAppender" fileName="logs/factura_envio.log" append="true"> <!-- Defines an appender that writes to the "factura_envio.log" file. The "append=true" attribute ensures that messages are appended to the file, not overwritten. -->
+
+            <!-- Layout for formatting log messages in the file -->
+            <PatternLayout>
+                <!-- This pattern defines the format of log messages. It includes the date, log level, logger name, and the message. -->
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+        </File>
+
+        <!-- Console appender to print logs to the console -->
+        <Console name="ConsoleAppender" target="SYSTEM_OUT"> <!-- Defines an appender that writes to the standard console output (SYSTEM_OUT). -->
+
+            <!-- Layout for formatting log messages in the console -->
+            <PatternLayout>
+                <!-- Similar to the file appender, this defines the format of the log messages. -->
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <!-- Root logger with level "info" -->
+        <Root level="info"> <!-- The "info" level means that messages of level "info", "warn", "error", etc., will be logged. -->
+
+            <!-- References to the appenders to send logs to both the file and the console -->
+            <AppenderRef ref="FileAppender" /> <!-- References the file appender to write to the file -->
+            <AppenderRef ref="ConsoleAppender" /> <!-- References the console appender to display logs in the console -->
+        </Root>
+    </Loggers>
+</Configuration>
+
